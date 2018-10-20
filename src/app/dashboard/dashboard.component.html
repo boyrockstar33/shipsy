@@ -1,0 +1,25 @@
+<div class="flex">
+    <app-sidebar (dashboardMenuClickEvent)="recieveDashboardClickEvent($event)"></app-sidebar>
+    <app-shipments *ngIf="dashboardMenu"></app-shipments>
+    <div class="content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d112241.52972623214!2d77.09831097900393!3d28.463044793322762!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1539949100352" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>    
+    </div>
+</div>
+<div class="card">
+    <table class="">
+        <tr>
+            <td class="border-right">Total orders</td>
+            <td class="border-right">30 Mins +</td>
+            <td class="border-right">20 - 30 Mins +</td>
+            <td class="border-right">10 - 20 Mins +</td>
+            <td>0 - 10 Mins +</td>
+        </tr>
+        <tr class="second-row">
+            <td style="color: #2b577c" class="border-right">80</td>
+            <td style="color: #c04547" class="border-right">20</td>
+            <td style="color: #8ac253" class="border-right">20</td>
+            <td style="color: #8ac253" class="border-right">20</td>
+            <td style="color: #8ac253">20</td>
+        </tr>
+    </table>
+</div>

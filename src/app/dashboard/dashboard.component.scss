@@ -1,0 +1,45 @@
+.flex{
+    display: flex;
+    margin: 0;
+    align-items: stretch;
+    height: 100%;
+}
+
+app-sidebar{
+    flex: 1;
+    order: 1;
+    max-width: 40px;
+    // -webkit-box-shadow: 10px 3px 12px 0px rgba(0,0,0,0.39);
+    // -moz-box-shadow: 10px 3px 12px 0px rgba(0,0,0,0.39);
+    // box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.39);
+}
+app-shipments{
+    order: 2
+}
+.content{
+    flex: 1;
+    order: 3;
+}
+.card{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    display: block;
+    margin-left: 35%;
+    padding: 5px;
+    margin-top: 5px;
+    -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.3);
+}
+.second-row{
+    font-weight: 700;
+    font-size: 34px;
+}
+td{
+    padding-right: 15px;
+    padding-left: 10px;
+}
+.border-right{
+    border-right: 1px solid #ddd;
+}

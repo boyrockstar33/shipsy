@@ -1,0 +1,21 @@
+.content{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.item{
+    cursor: pointer;
+    margin: 5px 0;
+}
+hr{
+    border-top:2px dashed #aaa;
+}
+i{
+    color: #aaa;
+}
+.active-link{
+    border-left: 3px solid #225590;
+    i{
+        color: #225590;
+    }
+}

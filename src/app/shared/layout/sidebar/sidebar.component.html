@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="item" [ngClass]="{'active-link': dashboardMenu==true}">
+        <i class="fas fa-tachometer-alt item" (click)="dashboardMenuClicked()"></i>
+    </div>
+    <div class="item" [ngClass]="{'active-link': reportsMenu==true}">
+        <i class="fas fa-tachometer-alt item" (click)="reportsMenuClicked()"></i>
+    </div>
+    <div class="item" [ngClass]="{'active-link': analyticsMenu==true}">
+        <i class="fas fa-tachometer-alt item" (click)="analyticsMenuClicked()"></i>
+    </div>
+    <div class="item" [ngClass]="{'active-link': performanceMenu==true}">
+        <i class="fas fa-tachometer-alt item" (click)="performanceMenuClicked()"></i>
+    </div>
+</div>

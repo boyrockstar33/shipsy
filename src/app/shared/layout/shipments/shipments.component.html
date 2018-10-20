@@ -1,0 +1,25 @@
+<div>
+    <input type="text" placeholder=" search" name="search" [(ngModel)]="searchString" (ngModelChange)="search(searchString, characterResponse)">
+</div>
+<hr>
+<div class="content">
+    <div class="filter">
+        Filter Tasks <input type="date">
+    </div>
+    <div class="shipments">
+        <div class="shipment-item" *ngFor="let character of characterResponse">
+            <div class="row">
+                <div class="col-md-2 pl-0 pr-0">
+                    <i class="fas fa-arrow-down" style="color: #a5af78;"></i>
+                </div>
+                <div class="col-md-8 pl-0 pr-0">
+                    {{ character.name }} | {{ character.actor }} <br>
+                    <span class="shipment-row">{{ character.house }} | {{ character.dateOfBirth }}</span>
+                </div>
+                <div class="col-md-2 pl-0 pr-0">
+                    <i class="fas fa-check" style="color: #a5af78;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
