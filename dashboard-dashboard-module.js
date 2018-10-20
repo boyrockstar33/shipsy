@@ -22910,7 +22910,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEvent)=\"recieveDashboardClickEvent($event)\"></app-sidebar>\n    <app-shipments *ngIf=\"dashboardMenu\"></app-shipments>\n    <div class=\"content\">\n        <iframe src=\"https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d112241.52972623214!2d77.09831097900393!3d28.463044793322762!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1539949100352\" width=\"100%\" height=\"100%\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>    \n    </div>\n</div>\n<div class=\"card\">\n    <table class=\"\">\n        <tr>\n            <td class=\"border-right\">Total orders</td>\n            <td class=\"border-right\">30 Mins +</td>\n            <td class=\"border-right\">20 - 30 Mins +</td>\n            <td class=\"border-right\">10 - 20 Mins +</td>\n            <td>0 - 10 Mins +</td>\n        </tr>\n        <tr class=\"second-row\">\n            <td style=\"color: #2b577c\" class=\"border-right\">80</td>\n            <td style=\"color: #c04547\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\">20</td>\n        </tr>\n    </table>\n</div>\n"
+module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEvent)=\"recieveDashboardClickEvent($event)\"></app-sidebar>\n    <app-shipments *ngIf=\"statusFlagsFromSidebar.dashboardMenu\"></app-shipments>\n    <div class=\"content\">\n        <iframe id=\"map\" src=\"https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d112241.52972623214!2d77.09831097900393!3d28.463044793322762!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1539949100352\" width=\"100%\" height=\"100%\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>    \n    </div>\n</div>\n<div class=\"card\">\n    <table class=\"\">\n        <tr>\n            <td class=\"border-right\">Total orders</td>\n            <td class=\"border-right\">30 Mins +</td>\n            <td class=\"border-right\">20 - 30 Mins +</td>\n            <td class=\"border-right\">10 - 20 Mins +</td>\n            <td>0 - 10 Mins +</td>\n        </tr>\n        <tr class=\"second-row\">\n            <td style=\"color: #2b577c\" class=\"border-right\">80</td>\n            <td style=\"color: #c04547\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\" class=\"border-right\">20</td>\n            <td style=\"color: #8ac253\">20</td>\n        </tr>\n    </table>\n</div>\n"
 
 /***/ }),
 
@@ -22921,7 +22921,7 @@ module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEven
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\n@media (max-width: 600px) {\n    app-sidebar {\n      display: none; } }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  position: absolute;\n  z-index: 100;\n  top: 0;\n  display: block;\n  margin-left: 35%;\n  padding: 5px;\n  margin-top: 5px;\n  box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.3); }\n\n@media (max-width: 976px) {\n    .card {\n      display: none; } }\n\n.second-row {\n  font-weight: 700;\n  font-size: 34px; }\n\ntd {\n  padding-right: 15px;\n  padding-left: 10px; }\n\n.border-right {\n  border-right: 1px solid #ddd; }\n"
+module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  position: absolute;\n  z-index: 100;\n  top: 0;\n  display: block;\n  margin-left: 35%;\n  padding: 5px;\n  margin-top: 5px;\n  box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.3); }\n\n@media (max-width: 976px) {\n    .card {\n      display: none; } }\n\n.second-row {\n  font-weight: 700;\n  font-size: 34px; }\n\ntd {\n  padding-right: 15px;\n  padding-left: 10px; }\n\n.border-right {\n  border-right: 1px solid #ddd; }\n\n@media (max-width: 600px) {\n  #map {\n    display: none; } }\n"
 
 /***/ }),
 
@@ -22945,10 +22945,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent() {
+        this.statusFlagsFromSidebar = {};
     }
     DashboardComponent.prototype.recieveDashboardClickEvent = function ($event) {
-        this.dashboardMenu = $event;
-        console.log(this.dashboardMenu);
+        this.statusFlagsFromSidebar = $event;
     };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -23197,7 +23197,7 @@ var ShipmentsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': dashboardMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"dashboardMenuClicked()\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': reportsMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"reportsMenuClicked()\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': analyticsMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"analyticsMenuClicked()\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': performanceMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"performanceMenuClicked()\"></i>\n    </div>\n</div>"
+module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.dashboardMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('dashboardMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.reportsMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('reportsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.analyticsMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('analyticsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.performanceMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('performanceMenu')\"></i>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -23239,32 +23239,47 @@ var SidebarComponent = /** @class */ (function () {
         this.reportsMenu = false;
         this.analyticsMenu = false;
         this.performanceMenu = false;
+        this.statusFlagsObject = {};
         this.dashboardMenuClickEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.reportsMenuClickEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
-    SidebarComponent.prototype.ngOnInit = function () { };
+    SidebarComponent.prototype.ngOnInit = function () {
+        this.setFlags();
+    };
     SidebarComponent.prototype.eventEmitterMethod = function (data) {
         this.dashboardMenuClickEvent.emit(data);
     };
-    SidebarComponent.prototype.dashboardMenuClicked = function () {
-        this.dashboardMenu = !this.dashboardMenu;
-        this.reportsMenu = this.analyticsMenu = this.performanceMenu = false;
-        this.eventEmitterMethod(this.dashboardMenu);
+    SidebarComponent.prototype.setFlags = function () {
+        this.statusFlagsObject = {
+            "dashboardMenu": this.dashboardMenu,
+            "reportsMenu": this.reportsMenu,
+            "analyticsMenu": this.analyticsMenu,
+            "performanceMenu": this.performanceMenu
+        };
     };
-    SidebarComponent.prototype.reportsMenuClicked = function () {
-        this.reportsMenu = !this.reportsMenu;
-        this.dashboardMenu = this.analyticsMenu = this.performanceMenu = false;
-        // this.reportsMenuClickEvent.emit(this.reportsMenu);
-    };
-    SidebarComponent.prototype.analyticsMenuClicked = function () {
-        this.analyticsMenu = !this.analyticsMenu;
-        this.reportsMenu = this.dashboardMenu = this.performanceMenu = false;
-        // this.eventEmitterMethod(this.analyticsMenu);
-    };
-    SidebarComponent.prototype.performanceMenuClicked = function () {
-        this.performanceMenu = !this.performanceMenu;
-        this.reportsMenu = this.analyticsMenu = this.dashboardMenu = false;
-        // this.eventEmitterMethod(this.performanceMenu);
+    SidebarComponent.prototype.menuClick = function (key) {
+        if (key == "dashboardMenu") {
+            this.dashboardMenu = !this.dashboardMenu;
+            this.reportsMenu = this.analyticsMenu = this.performanceMenu = false;
+            this.statusFlagsObject["dashboardMenu"] = this.dashboardMenu;
+        }
+        if (key == "reportsMenu") {
+            this.reportsMenu = !this.reportsMenu;
+            this.dashboardMenu = this.analyticsMenu = this.performanceMenu = false;
+            this.statusFlagsObject["reportsMenu"] = this.reportsMenu;
+        }
+        if (key == "analyticsMenu") {
+            this.analyticsMenu = !this.analyticsMenu;
+            this.reportsMenu = this.dashboardMenu = this.performanceMenu = false;
+            this.statusFlagsObject["analyticsMenu"] = this.analyticsMenu;
+        }
+        if (key == "performanceMenu") {
+            this.performanceMenu = !this.performanceMenu;
+            this.reportsMenu = this.analyticsMenu = this.dashboardMenu = false;
+            this.statusFlagsObject["performanceMenu"] = this.performanceMenu;
+        }
+        this.setFlags();
+        this.eventEmitterMethod(this.statusFlagsObject);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
