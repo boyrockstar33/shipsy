@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+    { path: '', loadChildren: './dashboard/dashboard.module#DashboardModule' },
 ];
 var AppRoutes = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, { initialNavigation: 'enabled' });
 
