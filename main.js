@@ -103,11 +103,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _shared_services_shipments_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/services/shipments.service */ "./src/app/shared/services/shipments.service.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _consignmentdetails_consignmentdetails_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./consignmentdetails/consignmentdetails.module */ "./src/app/consignmentdetails/consignmentdetails.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _consignmentdetails_consignmentdetails_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./consignmentdetails/consignmentdetails.component */ "./src/app/consignmentdetails/consignmentdetails.component.ts");
-/* harmony import */ var _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./consignmentdetails/modalCustomerDetail/modalCustomerDetail.component */ "./src/app/consignmentdetails/modalCustomerDetail/modalCustomerDetail.component.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _consignmentdetails_consignmentdetails_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./consignmentdetails/consignmentdetails.component */ "./src/app/consignmentdetails/consignmentdetails.component.ts");
+/* harmony import */ var _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./consignmentdetails/modalCustomerDetail/modalCustomerDetail.component */ "./src/app/consignmentdetails/modalCustomerDetail/modalCustomerDetail.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,7 +121,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
+// import { ConsignmentdetailsModule } from './consignmentdetails/consignmentdetails.module'
 
 
 
@@ -134,9 +133,9 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _consignmentdetails_consignmentdetails_component__WEBPACK_IMPORTED_MODULE_10__["ConsignmentdetailsComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
-                _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_11__["DialogOverviewExampleDialog"]
+                _consignmentdetails_consignmentdetails_component__WEBPACK_IMPORTED_MODULE_9__["ConsignmentdetailsComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"],
+                _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_10__["DialogOverviewExampleDialog"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -144,19 +143,19 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
                 _shared_layout_layout_module__WEBPACK_IMPORTED_MODULE_2__["LayoutModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
-                _consignmentdetails_consignmentdetails_module__WEBPACK_IMPORTED_MODULE_8__["ConsignmentdetailsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatAutocompleteModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatNativeDateModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatTabsModule"]
+                // ConsignmentdetailsModule,
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatSnackBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatAutocompleteModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatNativeDateModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatTabsModule"]
             ],
             providers: [
                 _shared_services_shipments_service__WEBPACK_IMPORTED_MODULE_6__["ShipmentsService"]
@@ -165,7 +164,7 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
             ],
             entryComponents: [
-                _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_11__["DialogOverviewExampleDialog"]
+                _consignmentdetails_modalCustomerDetail_modalCustomerDetail_component__WEBPACK_IMPORTED_MODULE_10__["DialogOverviewExampleDialog"]
             ]
         })
     ], AppModule);
@@ -281,66 +280,6 @@ var ConsignmentdetailsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/consignmentdetails/consignmentdetails.module.ts":
-/*!*****************************************************************!*\
-  !*** ./src/app/consignmentdetails/consignmentdetails.module.ts ***!
-  \*****************************************************************/
-/*! exports provided: ConsignmentdetailsModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConsignmentdetailsModule", function() { return ConsignmentdetailsModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_layout_layout_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/layout/layout.module */ "./src/app/shared/layout/layout.module.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-var ConsignmentdetailsModule = /** @class */ (function () {
-    function ConsignmentdetailsModule() {
-    }
-    ConsignmentdetailsModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                _shared_layout_layout_module__WEBPACK_IMPORTED_MODULE_1__["LayoutModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]
-            ],
-            declarations: [],
-            exports: [],
-            entryComponents: []
-        })
-    ], ConsignmentdetailsModule);
-    return ConsignmentdetailsModule;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/consignmentdetails/modalCustomerDetail/modalCustomerDetail.component.html":
 /*!*******************************************************************************************!*\
   !*** ./src/app/consignmentdetails/modalCustomerDetail/modalCustomerDetail.component.html ***!
@@ -431,7 +370,7 @@ module.exports = "<div class=\"flex\">\n    <div class=\"content\">\n        <if
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  position: absolute;\n  z-index: 100;\n  top: 0;\n  display: block;\n  margin-left: 35%;\n  padding: 5px;\n  margin-top: 5px;\n  box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.3); }\n\n@media (max-width: 976px) {\n    .card {\n      display: none; } }\n\n.second-row {\n  font-weight: 700;\n  font-size: 34px; }\n\ntd {\n  padding-right: 15px;\n  padding-left: 10px; }\n\n.border-right {\n  border-right: 1px solid #ddd; }\n\n@media (max-width: 600px) {\n  #map {\n    display: none; } }\n"
+module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  position: absolute;\n  z-index: 100;\n  top: 0;\n  display: block;\n  right: 10%;\n  padding: 5px;\n  margin-top: 5px;\n  box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.3); }\n\n@media (max-width: 976px) {\n    .card {\n      display: none; } }\n\n.second-row {\n  font-weight: 700;\n  font-size: 34px; }\n\ntd {\n  padding-right: 15px;\n  padding-left: 10px; }\n\n.border-right {\n  border-right: 1px solid #ddd; }\n\n@media (max-width: 600px) {\n  #map {\n    display: none; } }\n"
 
 /***/ }),
 
