@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEvent)=\"recieveDashboardClickEvent($event)\"></app-sidebar>\n    <app-shipments *ngIf=\"statusFlagsFromSidebar.dashboardMenu\"></app-shipments>\n    <div class=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</div>"
+module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEvent)=\"recieveDashboardClickEvent($event)\"></app-sidebar>\n    <app-shipments *ngIf=\"statusFlagsFromSidebar.analyticsMenu\"></app-shipments>\n    <div class=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -192,7 +192,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    // {path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_1__["DashboardComponent"] },
     { path: 'consignmentdetails', component: _consignmentdetails_consignmentdetails_component__WEBPACK_IMPORTED_MODULE_2__["ConsignmentdetailsComponent"] },
 ];
@@ -593,7 +593,7 @@ var ShipmentsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.reportsMenu==true}\" [routerLink]=\"['/consignmentdetails']\">\n        <i class=\"fas fa-box-open item\" (click)=\"menuClick('reportsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.analyticsMenu==true}\" [routerLink]=\"['/dashboard']\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('analyticsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.dashboardMenu==true}\">\n        <i class=\"fas fa-shipping-fast\" (click)=\"menuClick('dashboardMenu')\" style=\"margin-left: 4px;\"></i>\n    </div>\n</div>"
+module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.dashboardMenu==true}\" [routerLink]=\"['/dashboard']\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('dashboardMenu')\" title=\"Dashboard\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.reportsMenu==true}\" [routerLink]=\"['/consignmentdetails']\">\n        <i class=\"fas fa-box-open item\" (click)=\"menuClick('reportsMenu')\" title=\"Consignments\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.analyticsMenu==true}\">\n        <i class=\"fas fa-shipping-fast\" (click)=\"menuClick('analyticsMenu')\" title=\"Shipments\" style=\"margin-left: 4px;\"></i>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -619,6 +619,7 @@ module.exports = ".mat-badge-content{font-weight:600;font-size:12px;font-family:
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -629,8 +630,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent() {
+    function SidebarComponent(activeRoute, _router) {
+        this.activeRoute = activeRoute;
+        this._router = _router;
         this.dashboardMenu = false;
         this.reportsMenu = false;
         this.analyticsMenu = false;
@@ -650,7 +654,6 @@ var SidebarComponent = /** @class */ (function () {
             "dashboardMenu": this.dashboardMenu,
             "reportsMenu": this.reportsMenu,
             "analyticsMenu": this.analyticsMenu,
-            "performanceMenu": this.performanceMenu
         };
     };
     SidebarComponent.prototype.menuClick = function (key) {
@@ -669,11 +672,6 @@ var SidebarComponent = /** @class */ (function () {
             this.reportsMenu = this.dashboardMenu = this.performanceMenu = false;
             this.statusFlagsObject["analyticsMenu"] = this.analyticsMenu;
         }
-        if (key == "performanceMenu") {
-            this.performanceMenu = !this.performanceMenu;
-            this.reportsMenu = this.analyticsMenu = this.dashboardMenu = false;
-            this.statusFlagsObject["performanceMenu"] = this.performanceMenu;
-        }
         this.setFlags();
         this.eventEmitterMethod(this.statusFlagsObject);
     };
@@ -691,7 +689,7 @@ var SidebarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./sidebar.component.html */ "./src/app/shared/layout/sidebar/sidebar.component.html"),
             styles: [__webpack_require__(/*! ./sidebar.component.scss */ "./src/app/shared/layout/sidebar/sidebar.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], SidebarComponent);
     return SidebarComponent;
 }());
