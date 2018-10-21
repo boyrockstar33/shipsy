@@ -7,9 +7,8 @@ import { Component } from '@angular/core';
 
 
 export class DashboardComponent{
-    dashboardMenu: any
+    statusFlagsFromSidebar: any = {}
     recieveDashboardClickEvent($event){
-        this.dashboardMenu = $event
-        console.log(this.dashboardMenu)
+        this.statusFlagsFromSidebar = $event
     }
 }

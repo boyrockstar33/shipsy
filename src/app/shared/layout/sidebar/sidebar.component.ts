@@ -11,28 +11,48 @@ export class SidebarComponent{
     reportsMenu: boolean = false
     analyticsMenu: boolean = false
     performanceMenu: boolean = false
-
+    statusFlagsObject: any = {}
+    id: any
     @Output() dashboardMenuClickEvent = new EventEmitter<boolean>();
     @Output() reportsMenuClickEvent = new EventEmitter<boolean>();
-
-    constructor(){}
-    ngOnInit(){}
     
-    dashboardMenuClicked(){
-        this.dashboardMenu = !this.dashboardMenu ;
-        this.dashboardMenuClickEvent.emit(this.dashboardMenu);
+    constructor(){}
+    ngOnInit(){
+        this.setFlags()
     }
-
-    reportsMenuClicked(){
-        this.reportsMenu = !this.reportsMenu ;
-        this.reportsMenuClickEvent.emit(this.reportsMenu);
+    eventEmitterMethod(data){
+        this.dashboardMenuClickEvent.emit(data);
     }
-
-    analyticsMenuClicked(){
-        this.analyticsMenu = !this.analyticsMenu ;
+    setFlags(){
+        this.statusFlagsObject = {
+            "dashboardMenu": this.dashboardMenu,
+            "reportsMenu": this.reportsMenu,
+            "analyticsMenu": this.analyticsMenu,
+            "performanceMenu": this.performanceMenu
+        }
     }
-
-    performanceMenuClicked(){
-        this.performanceMenu = !this.performanceMenu ;
+    menuClick(key: string){
+        if(key == "dashboardMenu"){
+            this.dashboardMenu = !this.dashboardMenu
+            this.reportsMenu = this.analyticsMenu = this.performanceMenu = false
+            this.statusFlagsObject["dashboardMenu"] = this.dashboardMenu
+        }
+        if(key == "reportsMenu") {
+            this.reportsMenu = !this.reportsMenu
+            this.dashboardMenu = this.analyticsMenu = this.performanceMenu = false
+            this.statusFlagsObject["reportsMenu"] = this.reportsMenu
+        }
+        if(key == "analyticsMenu"){
+            this.analyticsMenu = !this.analyticsMenu
+            this.reportsMenu = this.dashboardMenu = this.performanceMenu = false
+            this.statusFlagsObject["analyticsMenu"] = this.analyticsMenu
+        }
+        if(key == "performanceMenu"){
+            this.performanceMenu = !this.performanceMenu
+            this.reportsMenu = this.analyticsMenu = this.dashboardMenu = false
+            this.statusFlagsObject["performanceMenu"] = this.performanceMenu
+        }
+        this.setFlags();
+        this.eventEmitterMethod(this.statusFlagsObject);
     }
 }

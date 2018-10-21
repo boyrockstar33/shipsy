@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ShipmentsService } from '../../services/shipments.service';
-
+import * as _ from 'lodash';
 @Component({
     selector: 'app-shipments',
     templateUrl: './shipments.component.html',
@@ -10,7 +10,9 @@ import { ShipmentsService } from '../../services/shipments.service';
 
 export class ShipmentsComponent{
     characterResponse: any
+    characterResponseForSearch: any
     searchString: string
+    date: Date
     
     constructor(private _ShipmentsService: ShipmentsService){}
     ngOnInit(){
@@ -20,17 +22,50 @@ export class ShipmentsComponent{
         this._ShipmentsService.getCharacters()
         .subscribe(response=>{
             this.characterResponse = response
-            console.log(this.characterResponse)
+            this.characterResponseForSearch = this.characterResponse
         })
     }
-
-    search(nameKey, myArray){
-        var tempCharacterResponse = this.characterResponse
-        for (var i=0; i < myArray.length; i++) {
-            if (myArray[i].name === nameKey) {
-                this.characterResponse[0] = myArray[i]
-            }
-            // else this.characterResponse = tempCharacterResponse
-        }
+    onDateChange(){
+        this.searchString = this.date.toString()
+        console.log(this.searchString)
     }
-}
+    search(text) {
+        console.log(text)
+        this.characterResponse = [];
+        var key = _.lowerCase(text).replace(/[\s]/g, "");
+        if(key.length){
+            this.characterResponseForSearch.filter(elem => {
+                if (
+                    _.lowerCase(elem.name)
+                    .replace(/[\s]/g, "")
+                    .includes(key)
+                    ){
+                        this.characterResponse.push(elem);
+                    }
+                    else if (
+                        _.lowerCase(elem.actor)
+                        .replace(/[\s]/g, "")
+                        .includes(key)
+                        ){
+                            this.characterResponse.push(elem);
+                        }
+                        else if (
+                            _.lowerCase(elem.house)
+                            .replace(/[\s]/g, "")
+                            .includes(key)
+                            ){
+                                this.characterResponse.push(elem);
+                            }
+                            else if (
+                                _.lowerCase(elem.dateOfBirth)
+                                .replace(/[\s]/g, "")
+                                .includes(key)
+                                ){
+                                    this.characterResponse.push(elem);
+                                }
+                        });
+                    } else {
+                        this.characterResponse = this.characterResponseForSearch;
+                    }
+                }
+            }
