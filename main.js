@@ -41,7 +41,7 @@ module.exports = "<div class=\"flex\">\n    <app-sidebar (dashboardMenuClickEven
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  min-height: 100%; }\n\n.block-center {\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n\n.customer-detail-button {\n  margin-top: 10%; }\n"
+module.exports = ".flex {\n  display: flex;\n  margin: 0;\n  align-items: stretch;\n  height: 100%; }\n\napp-sidebar {\n  flex: 1;\n  order: 1;\n  max-width: 50px; }\n\napp-shipments {\n  max-height: 10% !important;\n  order: 2;\n  max-height: 100%;\n  min-width: 300px; }\n\n.content {\n  flex: 1;\n  order: 3; }\n\n.card {\n  min-height: 100%; }\n\n.block-center {\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n\n.customer-detail-button {\n  margin-top: 10%; }\n"
 
 /***/ }),
 
@@ -654,7 +654,7 @@ var ShipmentsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.reportsMenu==true}\" [routerLink]=\"['/consignmentdetails']\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('reportsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.analyticsMenu==true}\" [routerLink]=\"['/dashboard']\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('analyticsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.dashboardMenu==true}\">\n            <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('dashboardMenu')\"></i>\n        </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.performanceMenu==true}\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('performanceMenu')\"></i>\n    </div>\n</div>"
+module.exports = "<div class=\"content\">\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.reportsMenu==true}\" [routerLink]=\"['/consignmentdetails']\">\n        <i class=\"fas fa-box-open item\" (click)=\"menuClick('reportsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.analyticsMenu==true}\" [routerLink]=\"['/dashboard']\">\n        <i class=\"fas fa-tachometer-alt item\" (click)=\"menuClick('analyticsMenu')\"></i>\n    </div>\n    <div class=\"item\" [ngClass]=\"{'active-link': statusFlagsObject.dashboardMenu==true}\">\n        <i class=\"fas fa-shipping-fast\" (click)=\"menuClick('dashboardMenu')\" style=\"margin-left: 4px;\"></i>\n    </div>\n</div>"
 
 /***/ }),
 
